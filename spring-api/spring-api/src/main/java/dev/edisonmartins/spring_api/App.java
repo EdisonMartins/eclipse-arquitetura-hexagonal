@@ -1,4 +1,4 @@
-package dev.edisonmartins.core;
+package dev.edisonmartins.spring_api;
 
 /**
  * Hello world!
