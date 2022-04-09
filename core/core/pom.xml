@@ -3,14 +3,22 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>hexagon</artifactId>
+	<packaging>jar</packaging>
+	
 	<parent>
 		<groupId>dev.edisonmartins</groupId>
 		<artifactId>arquitetura-hexagonal</artifactId>
 		<version>1.0.0</version>
+		<relativePath>../../arquitetura-hexagonal</relativePath>
 	</parent>
 
 	<dependencies>
-
+		<!-- CDI -->
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>2.0</version>
+		</dependency>
 	</dependencies>
 
 </project>

@@ -1,10 +1,107 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 	<artifactId>javafx-ui</artifactId>
 	<parent>
 		<groupId>dev.edisonmartins</groupId>
 		<artifactId>arquitetura-hexagonal</artifactId>
 		<version>1.0.0</version>
+		<relativePath>../../arquitetura-hexagonal</relativePath>
 	</parent>
+
+
+	<dependencies>
+		<!-- Hexagon -->
+		<dependency>
+			<groupId>dev.edisonmartins</groupId>
+			<artifactId>hexagon</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- Infra -->
+		<dependency>
+			<groupId>dev.edisonmartins</groupId>
+			<artifactId>infra</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- JavaFx -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>12</version>
+		</dependency>
+
+		<!-- javafx-fxml -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>12</version>
+		</dependency>
+
+
+		<!-- Spring Jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.1.6.RELEASE</version>
+		</dependency>
+
+		<!-- javafx-base -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-base</artifactId>
+			<version>12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-graphics </artifactId>
+			<version>12</version>
+			<classifier>win</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-web</artifactId>
+			<version>12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-media</artifactId>
+			<version>12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-swing</artifactId>
+			<version>12</version>
+		</dependency>
+		
+				<!-- Spring IoC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.1.6.RELEASE</version>
+		</dependency>
+
+		<!-- Spring Transaction -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>5.1.6.RELEASE</version>
+		</dependency>
+
+	</dependencies>
+
+
+
 </project>

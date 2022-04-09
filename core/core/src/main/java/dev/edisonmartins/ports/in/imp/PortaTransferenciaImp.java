@@ -1,6 +1,8 @@
 package dev.edisonmartins.ports.in.imp;
 
-import static dev.edisonmartins.domain.model.conta.Erro.*;
+import static dev.edisonmartins.domain.model.conta.Erro.inexistente;
+import static dev.edisonmartins.domain.model.conta.Erro.mesmaConta;
+import static dev.edisonmartins.domain.model.conta.Erro.obrigatorio;
 import static java.util.Objects.isNull;
 
 import java.math.BigDecimal;
