@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html;" charset="UTF-8" />
+	<title><ui:insert name="titulo">JSF-UI</ui:insert></title>
+	<h:outputStylesheet library="css" name="sistema.css"></h:outputStylesheet>
+	<h:outputScript library="js" name="jquery.maskmoney.js" />
+</h:head>
+<h:body>
+	<p:ajaxStatus styleClass="ajax-status" onsuccess="configurarMoeda();">
+		<f:facet name="start">
+			<h:graphicImage library="images" name="loading.gif" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+	
+
+
+
+
+	<header>
+	<div style="float: left;">
+		<h:link>
+			<h:graphicImage library="images" name="logo-branco.png" style="heigth: 64px; width: 64px;"/>
+		</h:link>
+	</div>
+
+	<div style="float: right; margin-right: 110px;">
+		<span>Adaptador Primário - JSF</span>
+	</div>
+
+	</header>
+
+	<div style="clear: both;"></div>
+
+	<div id="conteudo">
+		<ui:insert name="corpo" />
+	</div>
+
+	<p:separator style="margin-top: 20px;" />
+
+	<footer> Arquitetura Hexagonal, JSF e Primefaces</footer>
+
+
+
+	<script>
+	function configurarMoeda() {
+		$(".moeda").maskMoney({ decimal: ",", thousands: ".", allowZero: true });
+	}
+	
+	$(document).ready(function() {
+		configurarMoeda();
+	});
+	</script>
+
+	
+	<ui:insert name="js" />
+	
+
+
+
+
+
+
+
+
+</h:body>
+</html>
