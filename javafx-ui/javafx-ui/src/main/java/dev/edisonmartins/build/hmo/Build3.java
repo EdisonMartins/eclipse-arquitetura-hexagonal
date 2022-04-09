@@ -33,10 +33,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
     })
 public class Build3 {
 
-    @Bean
+    @SuppressWarnings("static-access")
+	@Bean
     public DataSource dataSource() {
         var builder = new EmbeddedDatabaseBuilder();
-        var db = builder.setType(EmbeddedDatabaseType.HSQL.HSQL)
+		var db = builder.setType(EmbeddedDatabaseType.HSQL.HSQL)
                 .addScript("create-db.sql")
                 .addScript("insert-data.sql")
                 .build();
