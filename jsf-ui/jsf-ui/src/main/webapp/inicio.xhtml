@@ -1,14 +1,41 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
+	<ui:define name="titulo">Transferência Bancária</ui:define>
 
-	<f:metadata>
-		<f:viewAction action="#{inicioBean.inicializar()}" />
-	</f:metadata>
-	Teste
+	<ui:define name="corpo">
 
-</html>
+		<!-- Utilizado para executar algum método antes de renderizar a página -->
+		<f:metadata>
+			<!-- Fix do Bug que chama várias vezes o listener -->
+			<f:viewParam name="dummy" />
+			<f:event listener="#{inicioBean.inicializar()}" type="preRenderView" />
+		</f:metadata>
+
+		<h:form id="pesquisaClientesForm">
+
+			<h1>Transferência Bancária</h1>
+			<p:messages autoUpdate="true" closable="true" />
+
+			<p:panelGrid id="painel"
+						 columns="2" 
+						 style="width:100%; 
+						 margin-top:20px;" 
+						 columnClasses="rotulo, campo">
+						 
+				<p:outputLabel value="Conta para Debitar" for="contaDebitoId" />
+				<p:inputNumber id="contaDebitoId" value="#{inicioBean.contaDebito}" maxlength="3"/>
+						 
+			</p:panelGrid>
+		</h:form>
+
+
+
+	</ui:define>
+
+
+</ui:composition>
