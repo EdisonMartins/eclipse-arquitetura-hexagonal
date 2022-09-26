@@ -12,6 +12,7 @@ import javafx.stage.Stage;
  *   BuildPath > Library > Classpath > Add External Jar (C:\Program Files\Java\javafx-sdk-18\lib)
  *   Run Configurations > VM Arguments
  *      --module-path "C:\Program Files\Java\javafx-sdk-18\lib" --add-modules=javafx.controls
+ *      --module-path "C:\Program Files\Java\jdk-19\javafx-sdk-19\lib" --add-modules=javafx.controls
  * 
  * Module-info.java
  * module dev.edisonmartins {

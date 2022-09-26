@@ -40,7 +40,7 @@ public class Build4 {
     public DataSource dataSource() {
         var db = new SimpleDriverDataSource();
         db.setDriverClass(org.hsqldb.jdbcDriver.class);
-        db.setUrl("jdbc:hsqldb:file:C:/CodigoCurso/Arquitetura-hexagonal-db/");
+        db.setUrl("jdbc:hsqldb:file:E:/PROGRAMACAO/BancoEmMemoria/DB/ArquiteturaHexagonal");
         db.setUsername("SA");
         db.setPassword("1234");
         return db;
