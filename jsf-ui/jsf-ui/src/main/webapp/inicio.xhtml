@@ -17,20 +17,62 @@
 		</f:metadata>
 
 		<h:form id="pesquisaClientesForm">
+			<p:growl id="growl" showDetail="true" life="8000" />
 
 			<h1>Transferência Bancária</h1>
 			<p:messages autoUpdate="true" closable="true" />
 
-			<p:panelGrid id="painel"
-						 columns="2" 
-						 style="width:100%; 
-						 margin-top:20px;" 
-						 columnClasses="rotulo, campo">
-						 
-				<p:outputLabel value="Conta para Debitar" for="contaDebitoId" />
-				<p:inputNumber id="contaDebitoId" value="#{inicioBean.contaDebito}" maxlength="3"/>
-						 
+			<p:panelGrid id="painel" columns="3"
+				style="width:100%; 
+						 margin-top:20px;"
+				columnClasses="rotulo, campo, texto">
+
+				<p:outputLabel value="Conta para Debitar:" for="contaDebitoId" />
+				<p:inputNumber id="contaDebitoId" value="#{inicioBean.contaDebito}"
+					maxlength="3" style="width:75px" decimalPlaces="0">
+					<p:ajax event="keyup" listener="#{inicioBean.carregaContaDebito()}"
+						update="growl contaDebitoText" />
+				</p:inputNumber>
+				<p:inputText id="contaDebitoText" value="-- TESTE --"
+					style="width:100%" />
+
+				<p:outputLabel value="Conta para Creditar:" for="contaCreditoId" />
+				<p:inputNumber id="contaCreditoId"
+					value="#{inicioBean.contaCredito}" maxlength="3" style="width:75px"
+					decimalPlaces="0">
+					<p:ajax event="keyup"
+						listener="#{inicioBean.carregaContaCredito()}"
+						update="growl contaCreditoText" />
+				</p:inputNumber>
+				<p:inputText id="contaCreditoText" value="-- TESTE --"
+					style="width:100%" />
+
+
+				<p:outputLabel value="Valor R$:" for="valorId" />
+				<p:inputNumber id="valorId" value="#{inicioBean.contaCredito}"
+					maxlength="3" style="width:75px" decimalPlaces="0">
+					<p:ajax event="keyup"
+						listener="#{inicioBean.carregaContaCredito()}" update="@form" />
+				</p:inputNumber>
+				<p:commandButton value="Transferir" actionListener="#{inicioBean.transferir()}"/>
+
+
 			</p:panelGrid>
+
+
+			<br />
+			<div align="right">
+				<p:ajaxStatus styleClass="block mb-4">
+
+					<f:facet name="start">
+						<i class="pi pi-spin pi-spinner loading-icon" aria-hidden="true"></i>
+					</f:facet>
+
+				</p:ajaxStatus>
+
+			</div>
+
+
 		</h:form>
 
 

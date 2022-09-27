@@ -50,6 +50,20 @@
 			<version>2.3.2</version>
 		</dependency>
 
+		<!-- Hexagon -->
+		<dependency>
+			<groupId>dev.edisonmartins</groupId>
+			<artifactId>hexagon</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- Infra -->
+		<dependency>
+			<groupId>dev.edisonmartins</groupId>
+			<artifactId>infra</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
 
 	</dependencies>
 

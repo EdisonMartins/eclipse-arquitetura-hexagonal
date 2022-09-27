@@ -51,9 +51,7 @@ footer {
 	padding: 10px;
 }
 
-.rotulo {
-	width: 175px;
-}
+
 
 .ajax-status {
 	position: fixed;
@@ -125,3 +123,31 @@ footer {
 .ui-state-disabled {
 	opacity: .70 !important;
 }
+
+td.ui-panelgrid-cell.rotulo {
+	width: 15%;
+	text-align: right;
+}
+
+td.ui-panelgrid-cell.campo {
+	width: 5%;
+}
+
+td.ui-panelgrid-cell.texto {
+	width: 80%;
+}
+
+#pesquisaClientesForm\:contaDebitoId_input {
+	width: 100px;
+}
+
+#pesquisaClientesForm\:contaCreditoId_input {
+	width: 100px;
+}
+
+
+#pesquisaClientesForm\:valorId_input {
+	width: 100px;
+}
+
+
