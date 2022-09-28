@@ -20,7 +20,6 @@
 			<p:growl id="growl" showDetail="true" life="8000" />
 
 			<h1>Transferência Bancária</h1>
-			<p:messages autoUpdate="true" closable="true" />
 
 			<p:panelGrid id="painel" columns="3"
 				style="width:100%; 
@@ -30,48 +29,34 @@
 				<p:outputLabel value="Conta para Debitar:" for="contaDebitoId" />
 				<p:inputNumber id="contaDebitoId" value="#{inicioBean.contaDebito}"
 					maxlength="3" style="width:75px" decimalPlaces="0">
-					<p:ajax event="keyup" listener="#{inicioBean.carregaContaDebito()}"
+					<p:ajax event="change" listener="#{inicioBean.carregaContaDebito()}"
 						update="growl contaDebitoText" />
 				</p:inputNumber>
-				<p:inputText id="contaDebitoText" value="-- TESTE --"
+				<p:inputText id="contaDebitoText" value="#{inicioBean.contaRealDebito.correntista} - Saldo R$: #{inicioBean.contaRealDebito.saldo}" disabled="true"
 					style="width:100%" />
 
 				<p:outputLabel value="Conta para Creditar:" for="contaCreditoId" />
 				<p:inputNumber id="contaCreditoId"
 					value="#{inicioBean.contaCredito}" maxlength="3" style="width:75px"
 					decimalPlaces="0">
-					<p:ajax event="keyup"
+					<p:ajax event="change"
 						listener="#{inicioBean.carregaContaCredito()}"
-						update="growl contaCreditoText" />
+						update="contaCreditoText" />
 				</p:inputNumber>
-				<p:inputText id="contaCreditoText" value="-- TESTE --"
-					style="width:100%" />
+				<p:inputText id="contaCreditoText" value="#{inicioBean.contaRealCredito.correntista} - Saldo R$: #{inicioBean.contaRealCredito.saldo}"
+					style="width:100%"  disabled="true"/>
 
 
 				<p:outputLabel value="Valor R$:" for="valorId" />
-				<p:inputNumber id="valorId" value="#{inicioBean.contaCredito}"
+				<p:inputNumber id="valorId" value="#{inicioBean.valor}"
 					maxlength="3" style="width:75px" decimalPlaces="0">
 					<p:ajax event="keyup"
-						listener="#{inicioBean.carregaContaCredito()}" update="@form" />
+						listener="#{inicioBean.carregaContaCredito()}" update="contaDebitoText" />
 				</p:inputNumber>
-				<p:commandButton value="Transferir" actionListener="#{inicioBean.transferir()}"/>
+				<p:commandButton value="Transferir" actionListener="#{inicioBean.transferir()}" update="@form"/>
 
 
 			</p:panelGrid>
-
-
-			<br />
-			<div align="right">
-				<p:ajaxStatus styleClass="block mb-4">
-
-					<f:facet name="start">
-						<i class="pi pi-spin pi-spinner loading-icon" aria-hidden="true"></i>
-					</f:facet>
-
-				</p:ajaxStatus>
-
-			</div>
-
 
 		</h:form>
 

@@ -5,6 +5,7 @@ import static dev.edisonmartins.domain.model.conta.Erro.mesmaConta;
 import static dev.edisonmartins.domain.model.conta.Erro.obrigatorio;
 import static java.util.Objects.isNull;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.inject.Inject;
@@ -23,9 +24,13 @@ import dev.edisonmartins.ports.out.ContaRepositorio;
  **/
 
 @Named
-public class PortaTransferenciaImp implements PortaTransferencia {
+public class PortaTransferenciaImp implements PortaTransferencia, Serializable {
 
-    private ContaRepositorio repositorio;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6316002444833178270L;
+	private ContaRepositorio repositorio;
     private Transferencia transferencia;
 
 
